@@ -1,0 +1,145 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+
+#container {
+    margin: auto;
+    width: 800px;
+    height: 400px;
+}
+
+
+
+.row {
+    display: flex;
+    height: calc(100% / 3);
+}
+
+
+
+.col {
+    width: calc(100% / 4);
+    padding: 10px;
+}
+
+.col div {
+    width: 100%;
+    height: 100%;
+}
+
+
+.card {
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.card .card-container.active {
+    transform: rotateY(0deg);
+}
+
+
+.card-container {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: rotateY(180deg);
+    transition: all 0.5s;
+    transform-style: preserve-3d;
+}
+
+
+.back-side {
+    background-image: url(/assets/source/imgs/Vi.jpg);
+    background-size: cover;
+    background-position: center;
+    position: absolute;    
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 15px;
+}
+
+
+.front-side {
+    background-color: rgba(255, 255, 255, 0.8);    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+
+button {
+    background-color: transparent;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 35px;
+    border-radius: 24px;
+    border: 1px solid white;
+    font-size: 24px;
+    color: white;
+}
+
+button:hover {
+    padding: 15px 60px;
+    background-color: white;
+    color: rgb(248, 98, 123);
+    transition: all 0.3s;
+}
+
+
+.overlay {
+    position: fixed;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(255, 156, 206);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    display: none;
+}
+
+
+.overlay.active {
+    transition: all 1s;
+    display: flex;
+}
+
+.overlay > div {
+    color: white;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
